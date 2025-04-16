@@ -74,7 +74,7 @@ def score_answers(
         output_alpaca=is_alpacafarm_rm,
     )
     model = (
-        RewardModel.from_pretrained(model_name, flash_attn=True, bf16=True)
+        RewardModel.from_pretrained(model_name, flash_attn=False, bf16=True)
         if is_alpacafarm_rm
         else AutoModelForSequenceClassification.from_pretrained(model_name)
     )
